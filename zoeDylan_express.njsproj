@@ -558,6 +558,7 @@
     <Content Include="node_modules\serve-favicon\package.json" />
     <Content Include="node_modules\serve-favicon\README.md" />
     <Content Include="package.json" />
+    <Content Include="README.md" />
     <Content Include="statics\image\tempimg.png" />
     <Content Include="statics\less\main.less" />
     <Content Include="statics\less\zoeDylan.reset.less" />
