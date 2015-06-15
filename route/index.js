@@ -11,7 +11,7 @@ module.exports = function (app) {
     //日志配置
     _log.configure({
         "appenders": [     
-            { "type": "dateFile", "filename": global.settings.log + 'def_', "pattern": "yyyyMMddhh.txt", "alwaysIncludePattern": true, "category": "default" }
+            { "type": "dateFile", "filename": global.settings.log + 'def_', "pattern": "yyyyMMddhhmm.txt", "alwaysIncludePattern": true, "category": "default", "maxLogSize": 20480, }
         ],
         "levels": { "logInfo": "DEBUG" }
     });
@@ -69,7 +69,7 @@ module.exports = function (app) {
         
         
         //日志记录
-        log.info({ 'ip': req.ip, 'url': atPath , 'end': data.type });
+        log.info('{ ip: ' + req.ip + ',url:' + atPath + ' , end:' + data.type + ' }');
         
         if (data.type == 'html') {
             console.log(req.path + '>>html');
