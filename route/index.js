@@ -6,18 +6,12 @@ module.exports = function (app) {
 		render = require(global.settings.vary),
         fs = require('fs'),
         cons = require('consolidate'),
-        def = require('./def.js'),
-        _log = require('log4js');
-    //日志配置
-    _log.configure({
-        "appenders": [     
-            { "type": "dateFile", "filename": global.settings.log + 'def_', "pattern": "yyyyMMddhhmm.txt", "alwaysIncludePattern": true, "category": "default", "maxLogSize": 20480, }
-        ],
-        "levels": { "logInfo": "DEBUG" }
-    });
+        def = require('./def.js');
+
+    //日志配置 
     
-    var 
-        log = _log.getLogger('default');
+    //var 
+    //    log = _log.getLogger('default');
     
     //控制器处理
     function getController(req, res) {
@@ -69,7 +63,7 @@ module.exports = function (app) {
         
         
         //日志记录
-        log.info('{ ip: ' + req.ip + ',url:' + atPath + ' , end:' + data.type + ' }');
+        //log.info('{ ip: ' + req.ip + ',url:' + atPath + ' , end:' + data.type + ' }');
         
         if (data.type == 'html') {
             console.log(req.path + '>>html');

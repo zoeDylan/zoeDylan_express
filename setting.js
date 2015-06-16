@@ -4,6 +4,7 @@
 	 * 
 	 * 注：路径要有结尾的‘/’
 	 */
+    global.mods = {};
 	return {
 		//根目录
 		"root_dir": __dirname,
