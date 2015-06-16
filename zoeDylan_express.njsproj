@@ -21,7 +21,6 @@
     <Folder Include="controller\" />
     <Folder Include="controller\index\" />
     <Folder Include="db\" />
-    <Folder Include="db\log\" />
     <Folder Include="node_modules\" />
     <Folder Include="node_modules\.bin\" />
     <Folder Include="node_modules\consolidate\" />

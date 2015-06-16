@@ -10,15 +10,8 @@ var
     app = express(),
     favicon = require('serve-favicon'),
     fs = require('fs'),
-    zoe = require('zoe')({
-        log: {
-            "appenders": [     
-                { "type": "console" },  
-                { "type": "dateFile", "filename": global.settings.log + 'def_', "pattern": "yyyyMMddhhmm.txt", "alwaysIncludePattern": true, "category": "default", "maxLogSize": 20480, }
-            ],
-            "levels": { "logInfo": "DEBUG" }
-        }
-    });
+    zoe = require('zoe')();
+//º”‘ÿ…Ë÷√
 app.use(express.static(global.settings.static_dir));
 
 //Õ¯’æÕº±Í
