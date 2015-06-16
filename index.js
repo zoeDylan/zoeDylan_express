@@ -13,6 +13,7 @@ var
     zoe = require('zoe')({
         log: {
             "appenders": [     
+                { "type": "console" },  
                 { "type": "dateFile", "filename": global.settings.log + 'def_', "pattern": "yyyyMMddhhmm.txt", "alwaysIncludePattern": true, "category": "default", "maxLogSize": 20480, }
             ],
             "levels": { "logInfo": "DEBUG" }

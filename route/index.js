@@ -32,7 +32,7 @@ module.exports = function (app) {
         if (fs.existsSync(allPath + '.js')) {
             data = require(allPath)(req, res);
         } else {
-            console.log('no controller::' + allPath);
+            log.info('no controller::' + allPath);
         }
         return {
             value: data.value,
@@ -52,7 +52,7 @@ module.exports = function (app) {
         res = data.res;
         //404报错处理
         function err_404(error) {
-            console.log('error:' + error);
+            log.info('error:' + error);
             
             error = error || '嘿,Man And Woman,你们走错地方了!'
             
@@ -64,10 +64,10 @@ module.exports = function (app) {
         }
         
         //日志记录
-        log.info('{ "ip":"' + req.ip + '","url":"' + atPath + '", "end":"' + data.type + '"}');
+        log.info('{ "ip":"' + req.ip + '","url":"' + req.url + '", "end":"' + data.type + '"}');
         
         if (data.type == 'html') {
-            console.log(req.path + '>>html');
+            log.info(req.path + '>>html');
             data.value._def = def({
                 control: data.control
             });
@@ -80,13 +80,13 @@ module.exports = function (app) {
                 }
             });
         } else if (data.type.search(/json/) == 0) {
-            console.log(req.path + '>>json');
+            log.info(req.path + '>>json');
             res.send(data.value);
         } else if (data.type.search(/file/) == 0) {
-            console.log(req.path + '>>file');
+            log.info(req.path + '>>file');
             res.sendFile(data.value);
         } else if (data.type.search(/error/) == 0) {
-            console.log('type:error');
+            log.info('type:error');
             err_404(data.value);
         } else {
             err_404();
