@@ -6,8 +6,10 @@ module.exports = function (app) {
 		render = require(global.settings.vary),
         fs = require('fs'),
         cons = require('consolidate'),
-        def = require('./def.js');
-
+        def = require('./def.js'),
+        zoe = require('zoe')(),
+        log = zoe.log;
+    
     //日志配置 
     
     //var 
@@ -61,9 +63,8 @@ module.exports = function (app) {
             });
         }
         
-        
         //日志记录
-        //log.info('{ ip: ' + req.ip + ',url:' + atPath + ' , end:' + data.type + ' }');
+        log.info('{ "ip":"' + req.ip + '","url":"' + atPath + '", "end":"' + data.type + '"}');
         
         if (data.type == 'html') {
             console.log(req.path + '>>html');

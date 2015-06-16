@@ -537,7 +537,7 @@
     <Compile Include="node_modules\serve-favicon\node_modules\parseurl\index.js" />
     <Compile Include="node_modules\zoe\index.js" />
     <Compile Include="node_modules\zoe\lib\log.js" />
-    <Compile Include="node_modules\zoe\options.js" />
+    <Compile Include="node_modules\zoe\lib\options.js" />
     <Compile Include="route\def.js" />
     <Compile Include="route\index.js" />
     <Compile Include="setting.js" />

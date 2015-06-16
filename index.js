@@ -4,8 +4,6 @@
 //≈‰÷√
 global.settings = require('./setting.js');
 
-
-
 var 
 	express = require('express'),
     http = require('http'),
@@ -20,9 +18,6 @@ var
             "levels": { "logInfo": "DEBUG" }
         }
     });
-
-zoe.log('11111');
-
 app.use(express.static(global.settings.static_dir));
 
 //Õ¯’æÕº±Í
