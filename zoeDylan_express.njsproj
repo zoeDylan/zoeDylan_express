@@ -176,6 +176,7 @@
     <Folder Include="node_modules\serve-favicon\node_modules\fresh\" />
     <Folder Include="node_modules\serve-favicon\node_modules\ms\" />
     <Folder Include="node_modules\serve-favicon\node_modules\parseurl\" />
+    <Folder Include="node_modules\zoe\lib\" />
     <Folder Include="route\" />
     <Folder Include="statics\" />
     <Folder Include="statics\css\" />
@@ -535,6 +536,8 @@
     <Compile Include="node_modules\serve-favicon\node_modules\ms\index.js" />
     <Compile Include="node_modules\serve-favicon\node_modules\parseurl\index.js" />
     <Compile Include="node_modules\zoe\index.js" />
+    <Compile Include="node_modules\zoe\lib\log.js" />
+    <Compile Include="node_modules\zoe\options.js" />
     <Compile Include="route\def.js" />
     <Compile Include="route\index.js" />
     <Compile Include="setting.js" />
