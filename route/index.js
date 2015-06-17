@@ -64,8 +64,8 @@ module.exports = function (app) {
         }
         
         //日志记录
-        log.info('{ "ip":"' + req.ip + '","url":"' + req.url + '", "end":"' + data.type + '"}');
-        
+        log.error('{ "ip":"' + req.ip + '","url":"' + req.url + '", "end":"' + data.type + '"}');
+        log(req.ip);
         if (data.type == 'html') {
             log.info(req.path + '>>html');
             data.value._def = def({

@@ -11,6 +11,7 @@ var
     favicon = require('serve-favicon'),
     fs = require('fs'),
     zoe = require('zoe')();
+
 //º”‘ÿ…Ë÷√
 app.use(express.static(global.settings.static_dir));
 

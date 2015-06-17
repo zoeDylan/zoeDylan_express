@@ -945,6 +945,7 @@
     <Content Include="node_modules\serve-favicon\node_modules\parseurl\README.md" />
     <Content Include="node_modules\serve-favicon\package.json" />
     <Content Include="node_modules\serve-favicon\README.md" />
+    <Content Include="node_modules\zoe\package.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
     <Content Include="statics\image\tempimg.png" />
