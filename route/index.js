@@ -52,10 +52,8 @@ module.exports = function (app) {
         res = data.res;
         //404报错处理
         function err_404(error) {
-            log.info('error:' + error);
-            
             error = error || '嘿,Man And Woman,你们走错地方了!'
-            
+
             cons.dot(global.settings.views + 'index/error_404.html', {
                 error: error
             }, function (err, html) {
@@ -74,7 +72,6 @@ module.exports = function (app) {
             cons.dot(atPath + '.html', data.value, function (err, html) {
                 if (!err) {
                     res.send(html);
-					
                 } else {
                     err_404();
                 }
