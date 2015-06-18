@@ -8,7 +8,6 @@
         "dot": "x",
         "log4js": "x",
         "serve-favicon": "x",
-        "consolidate": "x",
-        "request": "x"
+        "consolidate": "x"
     }
 }
