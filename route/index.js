@@ -10,11 +10,6 @@ module.exports = function (app) {
         zoe = require('zoe')(),
         log = zoe.log;
     
-    //日志配置 
-    
-    //var 
-    //    log = _log.getLogger('default');
-    
     //控制器处理
     function getController(req, res) {
         /*请求路径 控制器名称 处理器名称 整体路径 返回数据*/
@@ -32,7 +27,7 @@ module.exports = function (app) {
         if (fs.existsSync(allPath + '.js')) {
             data = require(allPath)(req, res);
         } else {
-            log.info('no controller::' + allPath);
+            log('no controller::' + allPath);
         }
         return {
             value: data.value,
@@ -53,7 +48,7 @@ module.exports = function (app) {
         //404报错处理
         function err_404(error) {
             error = error || '嘿,Man And Woman,你们走错地方了!'
-
+            
             cons.dot(global.settings.views + 'index/error_404.html', {
                 error: error
             }, function (err, html) {
@@ -62,10 +57,9 @@ module.exports = function (app) {
         }
         
         //日志记录
-        log.error('{ "ip":"' + req.ip + '","url":"' + req.url + '", "end":"' + data.type + '"}');
-        log(req.ip);
+        log('{ "ip":"' + req.ip + '","url":"' + req.url + '", "end":"' + data.type + '"}');
         if (data.type == 'html') {
-            log.info(req.path + '>>html');
+            log(req.path + '>>html');
             data.value._def = def({
                 control: data.control
             });
@@ -77,13 +71,16 @@ module.exports = function (app) {
                 }
             });
         } else if (data.type.search(/json/) == 0) {
-            log.info(req.path + '>>json');
+            log(req.path + '>>json');
             res.send(data.value);
         } else if (data.type.search(/file/) == 0) {
-            log.info(req.path + '>>file');
+            log(req.path + '>>file');
             res.sendFile(data.value);
+        } else if (data.type.search(/text/) == 0) {
+            log(req.path + '>>text');
+            res.send(data.value);
         } else if (data.type.search(/error/) == 0) {
-            log.info('type:error');
+            log('type:error');
             err_404(data.value);
         } else {
             err_404();
