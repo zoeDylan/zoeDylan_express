@@ -187,7 +187,6 @@
     <Folder Include="vary\" />
     <Folder Include="views\" />
     <Folder Include="views\index\" />
-    <Folder Include="views\layout\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controller\index\error.js" />
@@ -952,16 +951,12 @@
     <Content Include="statics\less\main.less" />
     <Content Include="statics\less\zoeDylan.reset.less" />
     <Content Include="statics\image\心脏跳动图.gif" />
-    <Content Include="views\btn.html" />
     <Content Include="views\index\error_404.html" />
     <Content Include="views\index\error_500.html" />
     <Content Include="views\index\index.html" />
     <Content Include="views\index\index.jst" />
     <Content Include="views\index\page.html" />
     <Content Include="views\index\heart.html" />
-    <Content Include="views\layout\add.def" />
-    <Content Include="views\layout\heart.html" />
-    <Content Include="views\layout\TextFile.txt.dot" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <!--Do not delete the following Import Project.  While this appears to do nothing it is a marker for setting TypeScript properties before our import that depends on them.-->
